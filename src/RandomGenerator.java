@@ -1,7 +1,7 @@
 import java.util.stream.Stream;
 
 public class RandomGenerator {
-    private final long seed;
+    private long seed;
 
     public RandomGenerator(int seed) {
         this.seed = seed;
