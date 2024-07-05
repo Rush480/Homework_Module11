@@ -23,9 +23,16 @@ public class Homework11 {
 
     }
 
-
-
     // Task 1
+    private static String oddIndexedNames(List<String> names) {
+        return IntStream.range(0, names.size())
+                .filter(i -> i % 2 == 0)
+                .mapToObj(index -> (index + 1) + ". " + names.get(index))
+                .collect(Collectors.joining(", "));
+    }
+
+
+    // Task 2
     private static List<String> sortedAndUpperCase(List<String> names) {
         return names.stream()
                 .map(String::toUpperCase)
@@ -33,14 +40,6 @@ public class Homework11 {
                 .toList();
     }
 
-    // Task 2
-    private static String oddIndexedNames(List<String> names) {
-        List<String> oddIndexedNames = IntStream.range(0, names.size())
-                .filter(i -> i % 2 == 0)
-                .mapToObj(names::get)
-                .toList();
-        return oddIndexedNames.toString();
-    }
 
     // Task 3
     private static void sortedDigitsArray(String[] digits) {
